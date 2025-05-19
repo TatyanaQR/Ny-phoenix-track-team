@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Meet Coach</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      background-image: url('phoenix-logo.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%;
+      background-attachment: fixed;
+      background-blend-mode: lighten;
+    }
+
+    nav {
+      background-color: #000;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+    }
+
+    .typed-text {
+      font-size: 48px;
+      text-align: center;
+      margin-top: 40px;
+      text-shadow: 0 0 10px orange, 0 0 20px darkorange;
+      min-height: 50px;
+    }
+
+    .author-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .author-section img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid orange;
+      box-shadow: 0 0 15px orange;
+    }
+
+    .author-section h3 {
+      margin-top: 15px;
+      font-size: 20px;
+      color: #FFA500;
+      text-shadow: 0 0 10px #FFA500;
+    }
+
+    .bio-container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 35px;
+      background-color: rgba(0, 0, 0, 0.65);
+      border: 2px solid orange;
+      border-radius: 12px;
+      box-shadow: 0 0 20px orange;
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    .bio-container p {
+      text-align: center;
+    }
+
+    .floating-logo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="requirements.html">Requirements</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<h1 class="typed-text" id="typed-title"></h1>
+
+
+<div class="author-section">
+  <img src="jsu-coach.jpg" alt="Coach Quinonez-Robinson Headshot">
+  <h3>Coach Quinonez-Robinson</h3>
+</div>
+
+
+<div class="bio-container">
+  
+  <p>
+    Coach Quinonez-Robinson is a former Division I athlete who has been running track for over 14 years.
+    Her passion for the sport is rooted in her love for people and her unshakable faith.
+    <br><br>
+    She believes that track and field is a mirror of life — it takes time, discipline, and perseverance to overcome
+    trials and tribulations. But once those storms pass, there is always a rainbow on the other side.
+    Through coaching, she teaches her athletes that greatness isn’t given — it’s earned through grit, grace, and God.
+    <br><br>
+    Her journey began when just one person believed in her, and now she has made it her mission to be that person for others.
+    With patience, purpose, and power in her words, Coach Quinonez-Robinson walks in faith and lights the way for the next generation.
+    <br><br>
+    <em>“God is amazing. He’s the reason I can chase my dreams while guiding others to achieve theirs.”</em>
+  </p>
+
+</div>
+
+<img src="phoenix-logo.png" alt="Floating Phoenix Logo" class="floating-logo">
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  var typed = new Typed("#typed-title", {
+    strings: ["Meet Coach Quinonez-Robinson"],
+    typeSpeed: 60,
+    backSpeed: 0,
+    loop: false,
+    showCursor: false
+  });
+</script>
+
+</body>
+</html>
