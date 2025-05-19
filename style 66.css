@@ -1,0 +1,391 @@
+
+/* Reset base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tagesschrift', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Navigation bar with consistent gradient */
+header {
+  background: linear-gradient(to right, #0b0b0b, #FF8C00);
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #FFA500;
+  font-weight: bold;
+  text-shadow: 0 0 8px #FFA500;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #FFA500;
+}
+
+/* Hero section */
+.hero {
+  padding-top: 100px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('background-phoenix.jpg') no-repeat center center/cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  color: #FFA500;
+  text-shadow: 0 0 10px #FFA500;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #FFA500;
+  width: 0;
+  animation: typing 3s steps(40, end) forwards;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 1rem;
+}
+
+.cta-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: #000;
+  background-color: #FFA500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 20px #FFA500;
+  text-decoration: none;
+}
+
+/* Scroll indicator */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  font-size: 2rem;
+  color: #FFA500;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
+}
+
+/* Floating logo */
+.floating-logo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: auto;
+  z-index: 10;
+}
+
+/* Highlight box */
+.highlight-box {
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: rgba(255, 165, 0, 0.15);
+  border: 2px solid #FFA500;
+  border-radius: 10px;
+  max-width: 800px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.1rem;
+  box-shadow: 0 0 15px #FFA500;
+}
+
+/* Scroll fix */
+#highlight-box {
+  scroll-margin-top: 120px;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .highlight-box {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Fix typing line and spacing for hero heading */
+.hero h1 {
+  font-size: 2rem;
+  color: #FFA500;
+  text-shadow: 0 0 10px #FFA500;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  border-right: none;
+  animation: typing 3s steps(40, end) forwards;
+}
+
+/* More space to prevent CTA overlap */
+.hero-content {
+  margin-bottom: 6rem;
+}
+
+/* Match nav bar style for all pages */
+header {
+  background: linear-gradient(to right, #0b0b0b, #ff8c00);
+  padding: 12px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Responsive touch-up */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content {
+    margin-bottom: 8rem;
+  }
+
+  .cta-button {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Force all nav links to use same color/font */
+.nav-links li a {
+  font-family: 'Tagesschrift', sans-serif;
+  color: #FFA500 !important;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+}
+
+/* Match nav bar background exactly */
+header {
+  background: linear-gradient(to right, #0b0b0b, #ff8c00) !important;
+}
+
+/* Hero typing fix */
+.hero h1 {
+  font-size: 2rem;
+  color: #FFA500;
+  text-shadow: 0 0 10px #FFA500;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  max-width: 90%;
+  animation: typing 4s steps(60, end) forwards, blink 0.75s step-end 8;
+  border-right: 2px solid #FFA500;
+  margin: 0 auto;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Fix hero layout */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 1rem;
+  margin-bottom: 8rem;
+}
+
+/* Button spacing */
+.cta-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: #000;
+  background-color: #FFA500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 20px #FFA500;
+  text-decoration: none;
+  z-index: 10;
+  position: relative;
+}
+
+/* Fix highlight box visibility */
+.highlight-box {
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: rgba(255, 165, 0, 0.15);
+  border: 2px solid #FFA500;
+  border-radius: 10px;
+  max-width: 800px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.1rem;
+  box-shadow: 0 0 15px #FFA500;
+  z-index: 5;
+  position: relative;
+}
+
+/* Scroll positioning */
+#highlight-box {
+  scroll-margin-top: 120px;
+}
+
+/* Nav bar fixes */
+header {
+  background: linear-gradient(to right, #0b0b0b, #ff8c00) !important;
+  padding: 12px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  font-family: 'Tagesschrift', sans-serif;
+  color: #FFA500 !important;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .highlight-box {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-content {
+    margin-bottom: 10rem;
+  }
+}
