@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About</title>
+  <link rel="stylesheet" href="style.css" />
+  
+<style>
+  nav {
+    background-color: #000;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  .nav-container > * {
+    color: orange;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 19px;
+    letter-spacing: 0.3px;
+  }
+  .dropbtn {
+    cursor: pointer;
+  }
+  .dropdown {
+    position: relative;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    min-width: 170px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  }
+  .dropdown-content a {
+    color: orange;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+    font-size: 15px;
+  }
+  .dropdown-content a:hover {
+    background-color: #222;
+    color: white;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .nav-container a:hover, .dropdown:hover .dropbtn {
+    color: white;
+  }
+</style>
+
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <div class="dropdown" onclick="toggleDropdown(event)">
+        <span class="dropbtn">About</span>
+        <div class="dropdown-content">
+          <a href="about.html">About the Coach</a>
+          <a href="philosophy.html">Philosophy</a>
+          <a href="team.html">Meet the Team</a>
+        </div>
+      </div>
+      <a href="requirements.html">Requirements</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+  
+<h1 class="glow">Meet Coach Quinonez-Robinson</h1>
+<p class="tagline">Purpose. Power. Passion.</p>
+<img src="jsu-coach.jpg" alt="Coach Quinonez-Robinson" class="bio-photo"/>
+<p class="caption">Coach Quinonez-Robinson</p>
+<div class="section">
+  <p>Coach Quinonez-Robinson is a former Division I athlete who has been running track for over 14 years. Her passion for the sport is rooted in her love for people and her unshakable faith.</p>
+  <p>She believes that track and field is a <span class="highlight">*mirror of life*</span> — it takes time, discipline, and perseverance to overcome trials and tribulations. But once those storms pass, there is <span class="highlight">*always a rainbow on the other side*</span>. Through coaching, she teaches her athletes that greatness isn’t given — <span class="highlight-orange">*it’s earned through grit, grace, and God*</span>.</p>
+  <p>Her journey began when just one person believed in her, and now she has made it her mission to be that person for others. With <span class="highlight">*patience, purpose, and power*</span> in her words, Coach Quinonez-Robinson walks in faith and lights the way for the next generation.</p>
+  <p style="text-align:center; font-style:italic;">“God is amazing. He’s the reason I can chase my dreams while guiding others to achieve theirs.”</p>
+</div>
+
+  <img src="phoenix-logo.png" class="floating-logo" alt="Phoenix Logo"/>
+  
+<script>
+  function toggleDropdown(e) {
+    const dropdown = e.currentTarget.querySelector('.dropdown-content');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    e.stopPropagation();
+  }
+  window.addEventListener('click', function() {
+    document.querySelectorAll('.dropdown-content').forEach(function(menu) {
+      menu.style.display = 'none';
+    });
+  });
+  document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+    dropdown.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Philosophy</title>
+  <link rel="stylesheet" href="style.css" />
+  
+<style>
+  nav {
+    background-color: #000;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  .nav-container > * {
+    color: orange;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 19px;
+    letter-spacing: 0.3px;
+  }
+  .dropbtn {
+    cursor: pointer;
+  }
+  .dropdown {
+    position: relative;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    min-width: 170px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  }
+  .dropdown-content a {
+    color: orange;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+    font-size: 15px;
+  }
+  .dropdown-content a:hover {
+    background-color: #222;
+    color: white;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .nav-container a:hover, .dropdown:hover .dropbtn {
+    color: white;
+  }
+</style>
+
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <div class="dropdown" onclick="toggleDropdown(event)">
+        <span class="dropbtn">About</span>
+        <div class="dropdown-content">
+          <a href="about.html">About the Coach</a>
+          <a href="philosophy.html">Philosophy</a>
+          <a href="team.html">Meet the Team</a>
+        </div>
+      </div>
+      <a href="requirements.html">Requirements</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+  
+<h1 class="glow">Coaching Philosophy</h1>
+<p class="tagline">Purpose. Power. Passion.</p>
+<div class="section">
+  <p><span class="highlight-orange">“I coach with purpose, patience, and passion.</span> To me, track and field is more than a sport — it’s a reflection of life itself. Every hurdle, every sprint, every finish line mirrors the struggles and triumphs we face in the real world. I believe in training the body, strengthening the mind, and feeding the soul.”</p>
+  <p>“My athletes don’t just run for times — they run with intention. I teach them that greatness is not handed out, it’s earned through <span class="highlight-orange">discipline, faith, and unwavering belief in self.</span> I will always be the coach who sees the potential others overlook, and I will push, protect, and pray for every young soul that steps onto my track. Because for me, coaching isn’t a job — <span class="highlight">it’s a calling.</span>”</p>
+</div>
+
+  <img src="phoenix-logo.png" class="floating-logo" alt="Phoenix Logo"/>
+  
+<script>
+  function toggleDropdown(e) {
+    const dropdown = e.currentTarget.querySelector('.dropdown-content');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    e.stopPropagation();
+  }
+  window.addEventListener('click', function() {
+    document.querySelectorAll('.dropdown-content').forEach(function(menu) {
+      menu.style.display = 'none';
+    });
+  });
+  document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+    dropdown.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  });
+</script>
+
+</body>
+</html>
