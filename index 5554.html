@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | NY Phoenix Track Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+    nav {
+      background-color: #000;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 10px;
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+    .nav-container > * {
+      color: orange;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 19px;
+      letter-spacing: 0.3px;
+    }
+    .dropbtn {
+      cursor: pointer;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #000;
+      min-width: 170px;
+      z-index: 1;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+    }
+    .dropdown-content a {
+      color: orange;
+      padding: 10px 14px;
+      text-decoration: none;
+      display: block;
+      font-weight: normal;
+      font-size: 15px;
+    }
+    .dropdown-content a:hover {
+      background-color: #222;
+      color: white;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .nav-container a:hover, .dropdown:hover .dropbtn {
+      color: white;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      text-align: center;
+      z-index: 2;
+      position: relative;
+    }
+    .glow {
+      font-size: 36px;
+      color: orange;
+      text-shadow: 0 0 15px orange;
+      animation: fadeIn 2s ease-in;
+    }
+    .tagline {
+      font-style: italic;
+      font-size: 18px;
+      color: #ccc;
+      margin-top: 10px;
+      animation: fadeIn 2s ease-in 0.5s;
+    }
+    .highlight-box {
+      background-color: rgba(255, 165, 0, 0.1);
+      border: 2px solid orange;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 20px;
+      font-weight: bold;
+      color: orange;
+      text-align: center;
+      animation: fadeIn 2s ease-in 1s;
+      width: 80%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 0 10px orange;
+    }
+    .watermark-bg {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 90%;
+      max-width: 800px;
+      transform: translate(-50%, -50%);
+      opacity: 0.1;
+      z-index: 0;
+    }
+    .floating-logo {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 60px;
+      z-index: 10;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <div class="dropdown" onclick="toggleDropdown(event)">
+        <span class="dropbtn">About</span>
+        <div class="dropdown-content">
+          <a href="about.html">About the Coach</a>
+          <a href="philosophy.html">Philosophy</a>
+          <a href="team.html">Meet the Team</a>
+        </div>
+      </div>
+      <a href="requirements.html">Requirements</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1 class="glow">Welcome to the<br>New York Phoenix Track Club</h1>
+    <p class="tagline">Where Dedication Meets Destiny</p>
+    <div class="highlight-box">
+      <p><em>“Lose. Lose. Lose. Win. Lose. Lose. Win. Win. Win. Win. Win.”</em></p>
+    </div>
+  </div>
+
+  <img src="phoenix_watermark_transparent.png" class="watermark-bg" alt="Phoenix Watermark"/>
+  <img src="phoenix-logo.png" class="floating-logo" alt="Phoenix Logo"/>
+
+  <script>
+    function toggleDropdown(e) {
+      const dropdown = e.currentTarget.querySelector('.dropdown-content');
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      e.stopPropagation();
+    }
+    window.addEventListener('click', function() {
+      document.querySelectorAll('.dropdown-content').forEach(function(menu) {
+        menu.style.display = 'none';
+      });
+    });
+    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+      dropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
+</body>
+</html>
