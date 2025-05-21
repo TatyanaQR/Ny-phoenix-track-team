@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meet the Team - New York Phoenix Track Club</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-title {
+            text-align: center;
+            font-size: 48px;
+            color: orange;
+            text-shadow: 0 0 15px orange;
+            margin-top: 100px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .coach-spotlight {
+            text-align: center;
+            margin: 40px auto 20px;
+        }
+        .coach-spotlight img {
+            width: 250px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px orange;
+        }
+        .coach-spotlight p {
+            font-size: 18px;
+            color: white;
+            max-width: 700px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+        .team-gallery {
+            margin-top: 80px;
+            text-align: center;
+        }
+        .coming-soon {
+            font-size: 42px;
+            color: orange;
+            text-shadow: 0 0 20px orange;
+            letter-spacing: 3px;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out infinite alternate;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="about.html" class="dropbtn">About ▾</a>
+            <div class="dropdown-content" id="aboutDropdown">
+                <a href="coach.html">Coach</a>
+                <a href="philosophy.html">Philosophy</a>
+                <a href="team.html">Meet the Team</a>
+            </div>
+        </div>
+        <a href="requirements.html">Requirements</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1 class="page-title">Meet the Team</h1>
+
+    <div class="coach-spotlight">
+        <img src="images/coach-spotlight.jpg" alt="Coach Tatyana">
+        <p>
+            At New York Phoenix, we’re not just a team—we’re a <em style="color:orange;">movement</em>. 
+            Every runner, jumper, and thrower here is family. 
+            We show up for each other, push each other, and rise from the ashes—together.
+        </p>
+    </div>
+
+    <div class="team-gallery">
+        <div class="coming-soon">COMING SOON</div>
+    </div>
+
+    <img src="images/floating-logo.png" class="logo-floating" alt="Phoenix Logo">
+</body>
+</html>
