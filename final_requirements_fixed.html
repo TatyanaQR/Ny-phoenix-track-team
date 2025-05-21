@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Requirements - New York Phoenix</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: black url('phoenix_watermark_transparent.png') no-repeat center center;
+      background-size: contain;
+      background-attachment: fixed;
+    }
+
+    .show-dropdown {
+      display: flex !important;
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      background-color: #111;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      padding: 10px;
+      border: 1px solid orange;
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      color: orange;
+      padding: 8px 10px;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" id="aboutToggle">About</a>
+          <ul class="dropdown-content" id="aboutDropdown">
+            <li><a href="about-coach.html">About the Coach</a></li>
+            <li><a href="philosophy.html">Philosophy</a></li>
+            <li><a href="meet-the-team.html">Meet the Team</a></li>
+          </ul>
+        </li>
+        <li><a href="requirements.html" class="active">Requirements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="glow-text fade-in" style="margin-top: 100px;">Team Requirements</h1>
+
+    <ul class="info-text fade-in" style="animation-delay: 1s;">
+      <li>🔥 <em>Must be dedicated and willing to work hard</em></li>
+      <li>🔥 <em>Must review and sign the contract within 7 days</em></li>
+      <li>🔥 <em>Must participate in a trial week to determine if they want to join</em></li>
+      <li>🔥 <em>Must have a renewed USATF membership with a verified DOB (Date Of Birth)</em></li>
+    </ul>
+
+    <p class="info-text fade-in" style="animation-delay: 2s;">
+      📝 <em>For registration, please fill out the form on the contact page and you will be contacted <span style="color: orange; font-style: italic;">immediately</span>.</em>
+    </p>
+  </main>
+
+  <img src="phoenix-logo.png" alt="Phoenix Logo" class="floating-logo" />
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const aboutToggle = document.getElementById("aboutToggle");
+      const aboutDropdown = document.getElementById("aboutDropdown");
+
+      aboutToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        aboutDropdown.classList.toggle("show-dropdown");
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".dropdown")) {
+          aboutDropdown.classList.remove("show-dropdown");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
