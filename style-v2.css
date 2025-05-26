@@ -1,0 +1,161 @@
+
+/* Reset and Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Archivo Black', sans-serif;
+  background-image: url('watermark.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  min-height: 100vh;
+}
+
+/* Container */
+.page-center {
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+  padding: 0 20px;
+}
+
+/* Header */
+h1 {
+  font-size: 2.5em;
+  color: #FFA500;
+  text-shadow: 0 0 1px #FFA500, 0 0 2px #FF8C00;
+  margin-bottom: 20px;
+  animation: fadeInSlow ease 5s;
+}
+
+@keyframes fadeInSlow {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Subheader */
+.subheader {
+  font-size: 1em;
+  color: #ffffff;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 100px;
+  opacity: 0.9;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #111;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+.navbar a, .dropbtn {
+  color: orange;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  font-size: 16px;
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.navbar a:hover, .dropbtn:hover {
+  text-shadow: 0 0 10px orange;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #222;
+  min-width: 160px;
+  z-index: 1;
+  top: 30px;
+  left: 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: orange;
+  font-weight: bold;
+}
+
+.dropdown-content a:hover {
+  background-color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Quote Box */
+.highlight-box {
+  margin: 0 auto 80px auto;
+  padding: 20px;
+  border: 2px solid orange;
+  max-width: 600px;
+  background-color: rgba(255, 140, 0, 0.1);
+  text-align: center;
+  font-size: 18px;
+  color: #FFA500;
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 2px #FFA500, 0 0 4px #FFA500;
+  }
+  to {
+    text-shadow: 0 0 6px #FF4500, 0 0 10px #FF4500;
+  }
+}
+
+/* Floating Logo */
+footer img.floating-logo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: auto;
+  opacity: 0.8;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+    margin-top: 30px;
+  }
+  .subheader {
+    font-size: 0.9em;
+    margin-bottom: 80px;
+  }
+  .highlight-box {
+    font-size: 16px;
+    padding: 15px;
+    margin: 0 20px 60px 20px;
+  }
+  .navbar a, .dropbtn {
+    font-size: 14px;
+    margin: 0 8px;
+  }
+}
